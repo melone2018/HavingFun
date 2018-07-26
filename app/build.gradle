@@ -72,4 +72,9 @@ dependencies {
     //dagger2
     implementation 'com.google.dagger:dagger:2.15'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
+
+    implementation 'com.google.firebase:firebase-database:9.4.0'
+    implementation 'com.google.firebase:firebase-auth:9.4.0'
 }
+
+apply plugin: 'com.google.gms.google-services'
