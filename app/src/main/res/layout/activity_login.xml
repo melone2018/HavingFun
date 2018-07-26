@@ -94,12 +94,16 @@
                     android:background="#3b5998"
                     android:text="@string/sign_in_with_facebook"
                     android:textAllCaps="false"
-                    android:layout_marginRight="20dp"
                     android:textColor="#fff" />
+                <View
+                    android:id="@+id/separator_view"
+                    android:layout_toRightOf="@+id/sign_in_facebook"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"/>
 
                 <Button
                     android:layout_alignParentRight="true"
-                    android:layout_toRightOf="@+id/sign_in_facebook"
+                    android:layout_toRightOf="@+id/separator_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#dc4e41"
@@ -108,6 +112,12 @@
                     android:textColor="#fff" />
             </RelativeLayout>
 
+            <Button
+                android:id="@+id/continue_as_guest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/continue_as_a_guest"/>
         </LinearLayout>
+
     </ScrollView>
 </LinearLayout>
