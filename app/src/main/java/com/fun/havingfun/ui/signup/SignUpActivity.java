@@ -45,7 +45,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
     }
 
     @Override
-    public void showSignUpFailuer(String signUpFailMsg, String failureTitle) {
+    public void showSignUpFailure(String signUpFailMsg, String failureTitle) {
         AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
         builder.setMessage(signUpFailMsg)
                 .setTitle(failureTitle)
@@ -66,7 +66,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                         } else {
-                            showSignUpFailuer(task.getException().getMessage(), "Log in failure!");
+                            showSignUpFailure(task.getException().getMessage(), "Log in failure!");
                         }
                     }
                 });

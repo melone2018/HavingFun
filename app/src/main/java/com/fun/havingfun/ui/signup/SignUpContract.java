@@ -8,7 +8,7 @@ public interface SignUpContract {
         void signUpNewAccount(String email, String password);
     }
     interface IView extends BaseView<IPresenter>{
-        void showSignUpFailuer(String signUpFailMsg, String failureTitle);
+        void showSignUpFailure(String signUpFailMsg, String failureTitle);
 
         void registerAccountToRemote(String email, String password);
     }

@@ -1,19 +1,12 @@
 package com.fun.havingfun.ui.signup;
 
-import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
-
-import com.fun.havingfun.R;
-import com.fun.havingfun.ui.home.HomeActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import static com.fun.havingfun.ui.util.Constants.INVALID_PASSWORD_OR_EMAIL;
+import static com.fun.havingfun.ui.util.Constants.PASSWORD_OR_EMAIL_IS_NULL;
+
 public class SignUpPresenter implements SignUpContract.IPresenter {
-    public static final String PASSWORD_OR_EMAIL_IS_NULL = "Please make sure you entred a password and email";
-    public static final String INVALID_PASSWORD_OR_EMAIL = "Invalid Password or Email";
+
 
     public FirebaseAuth getFirebaseAuth() {
         return mFirebaseAuth;
@@ -34,7 +27,7 @@ public class SignUpPresenter implements SignUpContract.IPresenter {
     @Override
     public void signUpNewAccount(String email, String password) {
         if(email.isEmpty() || password.isEmpty()){
-            this.signUpViewRef.showSignUpFailuer(PASSWORD_OR_EMAIL_IS_NULL, INVALID_PASSWORD_OR_EMAIL);
+            this.signUpViewRef.showSignUpFailure(PASSWORD_OR_EMAIL_IS_NULL, INVALID_PASSWORD_OR_EMAIL);
         }else{
             this.signUpViewRef.registerAccountToRemote(email, password);
         }
